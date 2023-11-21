@@ -1,0 +1,58 @@
+define user ask about capabilities
+  "What can you do?"
+  "What can you help me with?"
+  "tell me what you can do"
+  "tell me about you"
+  "How can you help me learn"
+  "What are you supposed to teach me"
+
+define flow
+  user ask about capabilities
+  bot inform capabilities
+
+define bot inform capabilities
+  "I am an AI assistant built to help you understand your school lessons. Ask me a question and I will support you through the learning process!"
+
+define user express greeting
+  "Hi"
+  "Hello!"
+  "Hey there!"
+
+define bot express greeting
+  "Hello there!"
+
+define bot ask about lesson
+  "Did you understand today's lesson?"
+
+define bot express concern
+  "What can I help you with"
+
+define user express feels good
+  "I'm understanding the lesson"
+  "I'm feeling good"
+ 
+
+define user express feels bad
+  "Not so good"
+  "Bad"
+  "I am having trouble"
+  
+
+define flow
+  user express greeting
+  bot express greeting
+  bot ask about lesson
+
+  when user express feels good
+    bot express positive emotion
+  else when user express feels bad
+    bot express concern
+
+define flow
+  user ask general question
+  bot response to general question
+
+
+define flow
+  user repeat word
+  bot repeat word
